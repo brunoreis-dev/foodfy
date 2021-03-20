@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen" />
+
+    {% block head %}
+      <title>Foody - As melhores receitas</title>
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <a href="/" class="header__container-img">
+            <img src="/assets/logo.png" alt="logo" />
+          </a>
+          <nav>
+            <a class="header__link" title="Sobre" href="/sobre" >Sobre</a>
+            <a class="header__link" title="Receitas" href="/receitas">Receitas</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+      <p class="copright">Todos direitos reservados, receitas Foodfy.</p>
+    </footer>
+  </body>
+</html>
+
+

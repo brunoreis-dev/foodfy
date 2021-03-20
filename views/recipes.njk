@@ -1,0 +1,28 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+  <title>Foody - Receitas</title>
+{% endblock %}
+
+{% block content %}
+
+  <section class="recipes">
+    <div class="container">
+      <h3 class="recipes__title">Mais acessadas</h3>
+      <div class="recipes__container">
+        {% for recipe in recipes %}
+          <div class="recipes__item recipes__item--click">
+            <div class="recipes__container-img">
+              <img class="recipes__image" src="{{recipe.image}}" alt="{{recipe.title}}"/>
+            </div>
+            <h2 class="recipes__name">{{recipe.title}}</h2>
+            <p class="recipes__author">por {{recipe.author}}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <script src="/index.js"></script>
+
+{% endblock %}

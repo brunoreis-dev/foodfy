@@ -1,0 +1,46 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+  <title>Foody - {{content.title}}</title>
+{% endblock %}
+
+{% block content %}
+
+  <section class="recipe-single">
+    <div class="container">
+      <div class="recipe-single__container-img">
+        <img class="recipe-single__image" src="{{content.image}}" alt="{{content.title}}"/>
+      </div>
+      <h2 class="recipe-single__title">{{content.title}}</h2>
+      <p class="recipe-single__author">por {{content.author}}</p>
+      <ul class="recipe-single__list">
+        <h3 class="recipe-single__list-title">Ingredientes<button class="recipe-single__button-toggle">esconder</button></h3>
+        <div class="recipe-single__list-container">
+          {% for ingredients in content.ingredients %}
+            <li class="recipe-single__list-item">{{ingredients}}</li>
+          {% endfor %}
+        </div>
+      </ul>
+      <ul class="recipe-single__list">
+        <h3 class="recipe-single__list-title">Modo de Preparo<button class="recipe-single__button-toggle">esconder</button></h3>
+        <div class="recipe-single__list-container">
+          {% for preparation in content.preparation %}
+            <li class="recipe-single__list-item">{{preparation}}</li>
+          {% endfor %}
+        </div>
+      </ul>
+      {% if(content.information) %}
+        <div class="recipe-single__list">
+          <h3 class="recipe-single__list-title">Informações adicionais<button class="recipe-single__button-toggle">esconder</button></h3>
+          <div class="recipe-single__list-container">
+            <p class="recipe-single__list-text">{{content.information}}</p>
+          </div>
+          
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <script src="/index.js"></script>
+
+{% endblock %}
